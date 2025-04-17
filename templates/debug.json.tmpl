@@ -1,0 +1,17 @@
+{
+  "host": "{{.Host}}",
+  "remote_addr": "{{.RemoteAddr}}",
+  "headers": {
+    {{- $first := true -}}
+    {{- range $name, $values := .Headers -}}
+      {{- if $first -}}{{- $first = false -}}{{- else -}},{{- end -}}
+      "{{$name}}": [
+        {{- $valueFirst := true -}}
+        {{- range $values -}}
+          {{- if $valueFirst -}}{{- $valueFirst = false -}}{{- else -}},{{- end -}}
+          "{{- . -}}"
+        {{- end -}}
+      ]
+    {{- end -}}
+  }
+}

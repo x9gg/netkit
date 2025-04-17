@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IP Address Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .ip-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .ip-version {
+            font-weight: bold;
+            color: #333;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your IP Address Information</h1>
+    
+    <div class="ip-box">
+        <span class="ip-version">IPv4:</span> {{.IPv4}}
+    </div>
+    
+    <div class="ip-box">
+        <span class="ip-version">IPv6:</span> {{.IPv6}}
+    </div>
+    
+    <h3>User Agent:</h3>
+    <pre>{{.UserAgent}}</pre>
+    
+    <p>This service works without JavaScript and is curl/wget friendly.</p>
+    
+    <h3>API Endpoints:</h3>
+    <ul>
+        <li><code>/</code> - This page</li>
+        <li><code>/plain</code> - Plain text version</li>
+        <li><code>/api</code> - JSON API</li>
+        <li><code>/ipv4</code> - IPv4 address only</li>
+        <li><code>/ipv6</code> - IPv6 address only</li>
+        <li><code>/debug</code> - Debug information (headers & host)</li>
+    </ul>
+</body>
+</html>

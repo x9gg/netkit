@@ -1,0 +1,10 @@
+## Debug Information ##
+
+Host: {{.Host}}
+Remote Address: {{.RemoteAddr}}
+
+## Headers ##
+{{range $name, $values := .Headers}}
+{{$name}}:{{range $value := $values}}
+    {{$value}}{{end}}
+{{end}}
